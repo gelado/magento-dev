@@ -1,0 +1,23 @@
+{
+    "name": "exemplo/RodrigoModule",
+    "description": "Primeiro Módulo de exemplo",
+    "authors": [
+        {
+            "email": "rodrigo@bhx.com.br",
+            "name": "Rodrigo Ribeiro"
+        }
+    ],
+    "type": "magento2-module",
+    "version": "1.0.0",
+    "license": [
+        "MIT"
+    ],
+    "autoload": {
+        "files": [
+            "registration.php"
+        ],
+        "psr-4": {
+            "Exemplo\\RodrigoModule\\": ""
+        }
+    }
+}

@@ -1,0 +1,20 @@
+{
+    "gamaacademy_db_1": {
+        "column": {
+            "entity_id": true,
+            "seller_name": true,
+            "saller_base": true
+        },
+        "index": {
+            "GAMAACADEMY_DB_1_SALLER_BASE": true
+        },
+        "constraint": {
+            "PRIMARY": true
+        }
+    },
+    "css_block": {
+        "column": {
+            "custom_column_1": true
+        }
+    }
+}

@@ -1,0 +1,49 @@
+<?xml version="1.0"?>
+<!DOCTYPE schema [
+    <!ELEMENT schema (table)*>
+    <!ATTLIST schema
+        xmlns:xsi CDATA #REQUIRED
+        xsi:noNamespaceSchemaLocation CDATA #REQUIRED>
+    <!ELEMENT table (column|constraint|index)*>
+    <!ATTLIST table
+        comment CDATA #REQUIRED
+        engine CDATA #IMPLIED
+        name CDATA #REQUIRED
+        resource CDATA #REQUIRED>
+    <!ELEMENT column (#PCDATA)>
+    <!ATTLIST column
+        comment CDATA #IMPLIED
+        default CDATA #IMPLIED
+        identity CDATA #IMPLIED
+        length CDATA #IMPLIED
+        name CDATA #REQUIRED
+        nullable CDATA #IMPLIED
+        unsigned CDATA #IMPLIED
+        xsi:type CDATA #IMPLIED>
+    <!ELEMENT constraint (column)*>
+    <!ATTLIST constraint
+        xsi:type CDATA #REQUIRED
+        referenceId CDATA #REQUIRED>
+    <!ELEMENT index (column)*>
+    <!ATTLIST index
+        referenceId CDATA #REQUIRED
+        indexType CDATA #REQUIRED>
+    ]>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:Setup/Declaration/Schema/etc/schema.xsd">
+    <table name="gamaacademy_db_1" resource="default" engine="innodb" comment="ModuleConfigDemo Table 1">
+        <column xsi:type="smallint" name="entity_id" unsigned="false" nullable="false" identity="true"
+                comment="Entity ID"/>
+        <column xsi:type="varchar" name="seller_name" nullable="false" length="255" default="simple" comment="Seller's name"/>
+        <column xsi:type="varchar" name="saller_base" nullable="true" length="64" comment="Where the seller is allocatted"/>
+        <constraint xsi:type="primary" referenceId="PRIMARY">
+            <column name="entity_id"/>
+        </constraint>
+        <index referenceId="GAMAACADEMY_INDEX_1" indexType="btree">
+            <column name="saller_base"/>
+        </index>
+    </table>
+    <table name="css_block" resource="default" comment="Updating existing table">
+        <column xsi:type="varchar" name="custom_column_1" nullable="false" length="10" comment="Custom Column 1"/>
+    </table>
+</schema>
